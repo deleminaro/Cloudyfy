@@ -54,6 +54,76 @@ main {
     background-color: #555;
 }
 
+/* Styles for the player section */
+.player-section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex; /* Arrange details and embed side-by-side */
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.player-section h2 {
+    width: 100%; /* Title takes full width */
+    margin-top: 0;
+    color: #ff5500;
+}
+
+#soundcloudEmbed {
+    /* Styles for the embed container */
+    flex-grow: 1; /* Allow embed to take space */
+    min-width: 300px; /* Minimum width before wrapping */
+    /* The iframe itself gets styled by SoundCloud, but you can control the container */
+}
+
+#trackDetails {
+    /* Styles for the track information next to the embed */
+    width: 200px; /* Fixed width, adjust as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items vertically */
+    text-align: center;
+}
+
+#playerArtwork {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+#playerTitle {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+#playerArtist {
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+#playerPermalink a {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #333; /* Dark button */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+#playerPermalink a:hover {
+    background-color: #555;
+}
+
+
 .results-container {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -69,10 +139,16 @@ main {
 
 .result-item {
     display: flex;
-    align-items: center; /* Vertically align items */
+    align-items: center;
     border-bottom: 1px solid #eee;
     padding: 15px 0;
-    gap: 15px; /* Space between artwork and text */
+    gap: 15px;
+    cursor: pointer; /* Indicate it's clickable */
+    transition: background-color 0.2s ease;
+}
+
+.result-item:hover {
+    background-color: #f9f9f9; /* Light hover effect */
 }
 
 .result-item:last-child {
@@ -83,11 +159,11 @@ main {
     width: 60px;
     height: 60px;
     border-radius: 4px;
-    object-fit: cover; /* Ensure image covers the area */
+    object-fit: cover;
 }
 
 .track-info {
-    flex-grow: 1; /* Allow info to take remaining space */
+    flex-grow: 1;
 }
 
 .track-info h3 {
@@ -102,20 +178,11 @@ main {
     color: #555;
 }
 
-.track-link a {
-    display: inline-block; /* Make the link a block for padding */
-    padding: 5px 10px;
-    background-color: #ff5500; /* SoundCloud orange */
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: background-color 0.2s ease;
+/* Remove the direct "Listen" link from search results, we'll use the player */
+.track-link {
+    display: none;
 }
 
-.track-link a:hover {
-     background-color: #e64c00; /* Darker orange on hover */
-}
 
 .loading-indicator {
     text-align: center;
@@ -129,7 +196,7 @@ main {
     background-color: #f8d7da; /* Light red background */
     color: #721c24; /* Dark red text */
     border: 1px solid #f5c6cb;
-    border-radius: 4px;
+    border-radius: 4 巴px;
     padding: 15px;
     margin-top: 20px;
     display: none; /* Hide by default, show with JS */
