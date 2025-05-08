@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundCloud Search Beta</title>
+    <!-- Link to our CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Optional: Add a favicon -->
+    <link rel="icon" type="image/png" href="https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2c3f09.ico?0a1e324">
+</head>
+<body>
+
+    <header>
+        <h1>SoundCloud Search</h1>
+        <p>Beta Version - Search for tracks on SoundCloud using the API.</p>
+    </header>
+
+    <main>
+        <section class="search-container">
+            <input type="text" id="searchQuery" placeholder="Enter track or artist name">
+            <button id="searchButton">Search</button>
+        </section>
+
+        <section id="resultsContainer" class="results-container">
+            <!-- Search results will be dynamically added here by JavaScript -->
+            <p class="placeholder">Search for something to see results!</p>
+        </section>
+
+        <section id="loadingIndicator" class="loading-indicator">
+            Loading...
+        </section>
+
+        <section id="errorDisplay" class="error-display">
+            <!-- Error messages will be displayed here by JavaScript -->
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Your Name/Project. Powered by SoundCloud API.</p>
+        <p>Note: Direct playback of full tracks may not be available via the public API.</p>
+    </footer>
+
+    <!-- Link to our JavaScript file -->
+    <!-- The 'defer' attribute ensures the script runs after the HTML is parsed -->
+    <script src="script.js" defer></script>
+</body>
+</html>
