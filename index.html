@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoundCloud Search Beta</title>
+    <title>Cloudyfy - SoundCloud Search & Player (Beta)</title>
     <!-- Link to our CSS file for styling -->
     <link rel="stylesheet" href="style.css">
     <!-- Optional: Add a favicon -->
     <link rel="icon" type="image/png" href="https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2c3f09.ico?0a1e324">
+    <!-- Include SoundCloud's iFrame embed script -->
+    <script src="https://w.soundcloud.com/player/api.js"></script>
 </head>
 <body>
 
     <header>
-        <h1>SoundCloud Search</h1>
-        <p>Beta Version - Search for tracks on SoundCloud using the API.</p>
+        <h1>Cloudyfy</h1>
+        <p>Beta SoundCloud Search & Player (via API & Embed)</p>
     </header>
 
     <main>
@@ -21,6 +23,22 @@
             <input type="text" id="searchQuery" placeholder="Enter track or artist name">
             <button id="searchButton">Search</button>
         </section>
+
+        <!-- Section for the player/selected track details -->
+        <section id="playerSection" class="player-section" style="display: none;">
+            <h2>Now Playing</h2>
+            <div id="soundcloudEmbed">
+                <!-- SoundCloud embed iframe will be placed here -->
+            </div>
+            <div id="trackDetails">
+                <!-- Details of the currently selected track -->
+                <img id="playerArtwork" src="" alt="Track Artwork">
+                <h3 id="playerTitle"></h3>
+                <p id="playerArtist"></p>
+                 <p><a id="playerPermalink" href="#" target="_blank">View on SoundCloud</a></p>
+            </div>
+        </section>
+
 
         <section id="resultsContainer" class="results-container">
             <!-- Search results will be dynamically added here by JavaScript -->
@@ -37,8 +55,8 @@
     </main>
 
     <footer>
-        <p>© 2023 Your Name/Project. Powered by SoundCloud API.</p>
-        <p>Note: Direct playback of full tracks may not be available via the public API.</p>
+        <p>© 2023 Your Name/Project. Powered by SoundCloud API & Embeds.</p>
+        <p>Note: Direct streaming via API is limited. Playback uses the official SoundCloud embed widget.</p>
     </footer>
 
     <!-- Link to our JavaScript file -->
